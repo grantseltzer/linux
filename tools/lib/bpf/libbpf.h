@@ -922,6 +922,15 @@ LIBBPF_DEPRECATED_SINCE(0, 8, "use bpf_map__type() instead")
 LIBBPF_API bool bpf_map__is_offload_neutral(const struct bpf_map *map);
 
 /**
+ * @brief **bpf_map__get_percpu_value()** 
+ * 
+ * @param map 
+ * @param key
+ * @return
+ */
+LIBBPF_API void *bpf_map__get_percpu_value(const struct bpf_map *map, const void* key);
+
+/**
  * @brief **bpf_map__is_internal()** tells the caller whether or not the
  * passed map is a special map created by libbpf automatically for things like
  * global variables, __ksym externs, Kconfig values, etc
